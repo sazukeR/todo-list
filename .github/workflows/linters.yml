@@ -56,7 +56,9 @@ jobs:
           node-version: "14.x"
       - name: Setup ESLint
         run: |
-          npm install --save-dev eslint@7.x eslint-config-airbnb-base@14.x eslint-plugin-import@2.x babel-eslint@10.x
+          npm install html-webpack-plugin
+          npm install --save-dev eslint@7.x eslint-config-airbnb-base@14.x eslint-plugin-import@2.x
+          babel-eslint@10.x
           [ -f .eslintrc.json ]
       - name: ESLint Report
         run: npx eslint .
