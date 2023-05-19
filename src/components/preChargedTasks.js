@@ -7,7 +7,7 @@ const preChargedTask = (t) => {
   const checkbox = document.createElement('input');
   const task = document.createElement('div');
   const buttonOptions = document.createElement('button');
-  buttonOptions.innerHTML = '<i class=`fa-solid fa-ellipsis-vertical`></i>';
+  buttonOptions.innerHTML = '<i class="fa-solid fa-ellipsis-vertical"></i>';
   checkbox.type = 'checkbox';
   checkbox.addEventListener('change', toggleTask);
   const label = document.createElement('label');
