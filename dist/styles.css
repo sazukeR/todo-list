@@ -12,6 +12,9 @@ body {
 button {
   border: none;
   background-color: transparent;
+  padding: 1rem;
+  justify-content: center;
+  cursor: pointer;
 }
 
 h1 {
@@ -38,10 +41,11 @@ input {
   display: flex;
   justify-content: space-between;
   padding: 1rem;
+  align-items: center;
 }
 
 .task-header button i {
-  font-size: 1.5rem;
+  font-size: 40px;
 }
 
 ul {
@@ -60,19 +64,27 @@ li {
   border: 1px solid grey;
 }
 
-li :nth-child(1) {
+li div:nth-child(1) {
   display: flex;
   justify-content: space-between;
+  position: relative;
 }
 
-li :nth-child(1) label {
+.none {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+li div label {
   display: flex;
   align-items: center;
   font-size: 1.5rem;
 }
 
-li :nth-child(2) i {
-  font-size: 2rem;
+.todo-box ul li button i {
+  font-size: 1.5rem;
 }
 
 #taskInput {
@@ -81,9 +93,33 @@ li :nth-child(2) i {
 }
 
 input[type="checkbox"] {
-  margin-right: 10px;
-  width: 1rem;
-  height: 3rem;
+  margin-right: 2rem;
+  width: 1.4rem;
+  height: 1.4rem;
+  align-self: center;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:hover {
+  box-shadow: 3px 3px 30px rgb(122, 118, 118);
+}
+
+ul li div label {
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+ul li div.taskInputs :nth-child(2) {
+  font-size: 1.5rem;
+  border: none;
+  background-color: transparent;
+  margin-left: 1rem;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.buttonsContainer button {
+  width: 3rem;
+  justify-content: center;
 }
 
 .completed {
@@ -95,5 +131,9 @@ input[type="checkbox"] {
   padding: 1rem;
   font-size: 1rem;
   font-weight: bold;
+}
+
+.backgroundEdit {
+  background-color: rgb(240, 210, 210);
 }
 

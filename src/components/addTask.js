@@ -1,27 +1,42 @@
-import toggleTask from './tooggleTask.js';
-import toggleCheckbox from './tooggleCheckbox.js';
+export const $taskList = document.getElementById('taskList');
+let tasks = [];
 
-const addTask = (inputId, listId) => {
-  const taskInput = document.getElementById(inputId);
-  const taskList = document.getElementById(listId);
+export function insertHTML(tasks) {
+  $taskList.innerHTML = '';
+  if (tasks.length > 0) {
+    tasks.forEach((task) => {
+      const $li = document.createElement('li');
+      $li.innerHTML = `<div class="taskInputs">
+                          <input type="checkbox" ${task.selected ? 'checked' : ''}>
+                          <input class="none" type="text" id="${task.id}" name="${task.id}">
+                          <label class="label" for="${task.id}">${task.desc}</label>
+                        </div>
+                        <div class="buttonsContainer">
+                          <button class="options-button" type="button"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                          <button class="delete-button none" type="button"><i class="fa-solid fa-trash"></i></button>
+                        </div>`;
+      $taskList.appendChild($li);
+    });
+  }
+  localStorage.setItem('tasks', JSON.stringify(tasks));
+}
 
-  if (taskInput.value.trim() !== '') {
-    const listItem = document.createElement('li');
-    const checkbox = document.createElement('input');
-    const task = document.createElement('div');
-    const buttonOptions = document.createElement('button');
-    buttonOptions.innerHTML = '<i class="fa-solid fa-ellipsis-vertical"></i>';
-    checkbox.type = 'checkbox';
-    checkbox.addEventListener('change', toggleTask);
-    const label = document.createElement('label');
-    label.textContent = taskInput.value;
-    label.addEventListener('click', toggleCheckbox);
-    task.append(checkbox);
-    task.append(label);
-    listItem.append(task);
-    listItem.append(buttonOptions);
-    taskList.append(listItem);
-    taskInput.value = '';
+const addTask = (input) => {
+  if (input.value.trim() !== '') {
+    const taskObj = {
+      id: `task-${Date.now().toString() + Math.random().toString(36)}`,
+      desc: input.value,
+      selected: false,
+    };
+    const tasksLS = JSON.parse(localStorage.getItem('tasks'));
+    if (tasksLS.length > 0) {
+      tasks = [...tasksLS, taskObj];
+    } else {
+      tasks = [...tasksLS, taskObj];
+    }
+    insertHTML(tasks);
+    input.value = '';
   }
 };
+
 export default addTask;

@@ -1,9 +1,9 @@
 import handleKeyDown from './components/handleKeyDown.js';
-import preChargedTask from './components/preChargedTasks.js';
 import './styles.css';
+import editTask from './components/editTask.js';
+import preChargedTask from './components/preChargedTask.js';
 
-preChargedTask('wash the dog');
-preChargedTask('Complete To Do list project');
-preChargedTask('fix card');
+preChargedTask();
 const taskInput = document.getElementById('taskInput');
 taskInput.addEventListener('keydown', (e) => handleKeyDown(e));
+document.addEventListener('click', (e) => editTask(e));
