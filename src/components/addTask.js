@@ -9,7 +9,7 @@ export function insertHTML(tasks) {
       $li.innerHTML = `<div class="taskInputs">
                           <input type="checkbox" ${task.selected ? 'checked' : ''}>
                           <input class="none" type="text" id="${task.id}" name="${task.id}">
-                          <label class="label" for="${task.id}">${task.desc}</label>
+                          <label class="label ${task.selected ? 'completed' : ''}" for="${task.id}">${task.desc}</label>
                         </div>
                         <div class="buttonsContainer">
                           <button class="options-button" type="button"><i class="fa-solid fa-ellipsis-vertical"></i></button>

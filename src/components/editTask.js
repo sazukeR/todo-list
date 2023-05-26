@@ -25,6 +25,11 @@ export default function editTask(e) {
     inputField.addEventListener('keydown', (e) => {
       if (e.keyCode === 13) updateTask(e);
     });
-    inputField.addEventListener('blur', (e) => updateTask(e));
+
+    inputField.addEventListener('blur', (e) => {
+      if (e.relatedTarget && e.relatedTarget.matches('.delete-button')) return;
+      if (inputField.value.trim() === '') inputField.value = oldTaskText.textContent;
+      updateTask(e);
+    });
   }
 }

@@ -5,13 +5,13 @@ function updateTask(e) {
       e.target.parentNode.nextElementSibling.lastElementChild,
     ];
     const inputField = e.target;
+    const $listItem = inputField.parentElement.parentElement;
     const taskUpdated = inputField.nextElementSibling;
     taskUpdated.classList.remove('none');
     inputField.classList.add('none');
-    if (e.type !== 'blur') {
-      buttons[0].classList.toggle('none');
-      buttons[1].classList.toggle('none');
-    }
+    $listItem.classList.remove('backgroundEdit');
+    buttons[0].classList.remove('none');
+    buttons[1].classList.add('none');
     taskUpdated.textContent = inputField.value;
     const taskList = JSON.parse(localStorage.getItem('tasks'));
     const taskId = inputField.id;

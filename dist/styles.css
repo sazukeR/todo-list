@@ -7,6 +7,8 @@ body {
   justify-content: center;
   text-align: center;
   width: 100%;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: rgba(224, 224, 224, 0.1);
 }
 
 button {
@@ -19,8 +21,9 @@ button {
 
 h1 {
   margin: 0;
-  font-size: 1.5rem;
-  font-weight: 300;
+  font-weight: 600;
+  font-size: 1.7rem;
+  color: rgba(120, 118, 118, 0.9);
 }
 
 input {
@@ -30,22 +33,25 @@ input {
 .todo-box {
   display: flex;
   flex-direction: column;
-  width: 40%;
+  width: 60%;
   min-width: 470px;
   margin-top: 4rem;
-  box-shadow: 3px 5px 10px;
+  box-shadow: 1px 1px 10px rgb(140, 140, 140);
   margin-bottom: 3rem;
+  border: none;
+  background-color: white;
 }
 
 .task-header {
   display: flex;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   align-items: center;
+  border-bottom: 1px solid rgb(183, 192, 192);
 }
 
 .task-header button i {
-  font-size: 40px;
+  font-size: 26px;
 }
 
 ul {
@@ -61,13 +67,13 @@ li {
   justify-content: space-between;
   cursor: pointer;
   padding: 0.5rem 1rem;
-  border: 1px solid grey;
+  border-bottom: 1px solid rgb(183, 192, 192);
 }
 
 li div:nth-child(1) {
   display: flex;
-  justify-content: space-between;
   position: relative;
+  width: 100%;
 }
 
 .none {
@@ -80,7 +86,11 @@ li div:nth-child(1) {
 li div label {
   display: flex;
   align-items: center;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
+  width: 100%;
+  font-weight: 600;
+  color: rgba(120, 118, 118, 0.9);
+  cursor: pointer;
 }
 
 .todo-box ul li button i {
@@ -88,8 +98,19 @@ li div label {
 }
 
 #taskInput {
-  padding: 1rem;
+  padding: 1rem 2rem;
   font-size: 1.5rem;
+  height: 2.5rem;
+  border: none;
+  border-bottom: 1px solid rgb(183, 192, 192);
+  font-weight: 600;
+}
+
+#taskInput::placeholder {
+  color: rgb(183, 192, 192);
+  font-size: 1.4rem;
+  font-style: italic;
+  font-family: cursive;
 }
 
 input[type="checkbox"] {
@@ -101,20 +122,17 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"]:hover {
-  box-shadow: 3px 3px 30px rgb(122, 118, 118);
-}
-
-ul li div label {
-  cursor: pointer;
-  margin-left: 1rem;
+  box-shadow: 3px 3px 10px rgba(122, 118, 118, 0.3);
 }
 
 ul li div.taskInputs :nth-child(2) {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   border: none;
   background-color: transparent;
-  margin-left: 1rem;
   font-family: 'Times New Roman', Times, serif;
+  width: 100%;
+  color: rgba(120, 118, 118, 0.9);
+  font-weight: 600;
 }
 
 .buttonsContainer button {
@@ -128,12 +146,17 @@ ul li div.taskInputs :nth-child(2) {
 }
 
 .clear-button {
-  padding: 1rem;
+  padding: 1.5rem;
   font-size: 1rem;
   font-weight: bold;
+  color: rgb(152, 164, 164);
+}
+
+.clear-button:hover {
+  color: black;
 }
 
 .backgroundEdit {
-  background-color: rgb(240, 210, 210);
+  background-color: rgba(255, 167, 90, 0.1);
 }
 
