@@ -2,17 +2,17 @@ class TodoList {
   constructor() {
     this.preTasks = [
       {
-        id: 'task1',
+        id: 111,
         desc: 'wash the dogs',
         selected: false,
       },
       {
-        id: 'task2',
+        id: 222,
         desc: 'fix car',
         selected: false,
       },
       {
-        id: 'task3',
+        id: 333,
         desc: 'complete to do list',
         selected: false,
       },
