@@ -2,17 +2,17 @@ class TodoList {
   constructor() {
     this.preTasks = [
       {
-        id: 'task1',
+        id: 111,
         desc: 'wash the dogs',
         selected: false,
       },
       {
-        id: 'task2',
+        id: 222,
         desc: 'fix car',
         selected: false,
       },
       {
-        id: 'task3',
+        id: 333,
         desc: 'complete to do list',
         selected: false,
       },
@@ -52,6 +52,7 @@ class TodoList {
       if (e.target.matches('label')) {
         const $input = e.target.previousElementSibling;
         const $label = e.target;
+        const $li = e.target.closest('li');
         const $deleteBtn = e.target.parentElement.nextElementSibling.lastElementChild;
         const $optionsBtn = e.target.parentElement.nextElementSibling.firstElementChild;
         $input.value = $label.textContent;
@@ -59,6 +60,7 @@ class TodoList {
         $label.classList.add('none');
         $deleteBtn.classList.remove('none');
         $optionsBtn.classList.add('none');
+        $li.classList.add('backgroundEdit');
         $input.addEventListener('keydown', (e) => {
           if (e.keyCode === 13) {
             this.tasks = this.tasks.map((task) => {
