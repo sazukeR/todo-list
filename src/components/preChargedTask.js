@@ -1,4 +1,4 @@
-import { insertHTML } from './addTask.js';
+import insertHTML from './insertHTML.js';
 import deleteTask from './deleteTask.js';
 import toggleTask from './tooggleTask.js';
 
