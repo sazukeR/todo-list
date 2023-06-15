@@ -1,12 +1,11 @@
 import addTask from '../../src/components/addTask.js';
 import insertHTML from '../../src/components/insertHTML.js';
 
-jest.mock('../../src/components/insertHTML.js', () => ({
-  insertHTML: jest.fn(),
-}));
+jest.mock('../../src/components/insertHTML.js');
 
 beforeEach(() => {
   localStorage.clear(); // Limpiar el localStorage antes de cada prueba
+  insertHTML.mockClear();
 });
 
 describe('Tests in addTask()', () => {

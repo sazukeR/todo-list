@@ -37,7 +37,7 @@ class TodoList {
   }
 
   addTask(task) {
-    if (task === '') return;
+    if (task.desc.trim() === '') return;
     this.tasks.push(task);
     this.updateLocalStorage();
     this.$inputEntryTask.value = '';
@@ -72,6 +72,7 @@ class TodoList {
             this.updateLocalStorage();
           }
         });
+
         $input.addEventListener('blur', (e) => {
           if (e.relatedTarget && e.relatedTarget.matches('.delete-button')) {
             this.tasks = this.tasks.filter((task) => {
@@ -116,7 +117,6 @@ class TodoList {
                                    <button class="options-button" type="button"><i class="fa-solid fa-ellipsis-vertical"></i></button>
                                    <button class="delete-button none" type="button"><i class="fa-solid fa-trash"></i></button>
                               </div>`;
-
       taskList.appendChild(taskElement);
     });
   }
